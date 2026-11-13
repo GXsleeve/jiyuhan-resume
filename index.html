@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>季宇涵｜交互式简历</title>
+<meta name="description" content="季宇涵的用户运营履历。沿地图查看兰州、杭州、南京的经历与项目。">
+<link rel="stylesheet" href="style.css">
+<script src="geography.js" defer></script>
+<script src="route.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#intro">跳到正文</a>
+<header class="top">
+  <a class="brand" href="#intro">季宇涵<span>.</span></a>
+  <nav aria-label="主导航"><a href="#map">履历地图</a><a href="#projects">项目</a><a href="#contact">联系</a><a class="download" href="resume.pdf" download="季宇涵-私域用户运营-成果版.pdf">PDF ↓</a></nav>
+</header>
+<main>
+  <section class="intro" id="intro">
+    <div class="intro-copy">
+      <h1>季宇涵</h1>
+      <p class="role">私域用户运营 · App 活动运营</p>
+      <p class="bio">做过企微私域搭建、用户分层、团长运营和首单复购。现负责小金豆 App 活动配置、Banner 文案、推广链路检查及内测反馈。</p>
+      <dl class="snapshot">
+        <div><dt>教育</dt><dd><strong>兰州大学</strong><span>人力资源管理 · 大专</span><time>2017 – 2020</time></dd></div>
+        <div><dt>经历</dt><dd class="history"><a href="#city-lanzhou">2017<span>兰州</span></a><a href="#city-hangzhou">2019<span>杭州</span></a><a href="#city-nanjing">2024 至今<span>南京</span></a></dd></div>
+        <div><dt>方向</dt><dd><span>私域增长</span><span>活动转化</span><span>App 运营</span></dd></div>
+      </dl>
+    </div>
+    <canvas id="portrait" aria-hidden="true"></canvas>
+    <a class="scroll-link" href="#map" aria-label="打开履历地图"><span></span>⌄</a>
+  </section>
+  <section class="map-section" id="map" aria-labelledby="map-title">
+    <div class="map-stage" id="stage">
+      <canvas id="atlas" aria-hidden="true"></canvas>
+      <div class="pins" id="pins" aria-label="地图城市" role="group"></div>
+      <div class="map-header"><h2 id="map-title">履历地图</h2><p>点击城市查看当地经历</p></div>
+      <aside class="city-card" id="city-card" aria-live="polite" hidden></aside>
+      <div class="map-controls"><button id="overview" type="button" aria-pressed="true">全国全览</button><div id="city-buttons" role="group" aria-label="切换城市"></div></div>
+      <a class="attribution" href="https://datav.aliyun.com/portal/school/atlas/area_selector" target="_blank" rel="noopener">地图数据 · 阿里云 DataV</a>
+    </div>
+  </section>
+  <div id="longform"></div>
+</main>
+<footer id="contact"><div class="wrap footer"><div><h2>联系</h2><p>季宇涵 · 私域用户运营</p></div><address><a href="mailto:1509908618@qq.com">1509908618@qq.com</a><a href="tel:+8617855114717">178 5511 4717</a></address><a class="download" href="resume.pdf" download="季宇涵-私域用户运营-成果版.pdf">下载原版 PDF ↓</a></div></footer>
+</body>
+</html>
+
