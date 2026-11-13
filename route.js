@@ -3,7 +3,7 @@ const stops = [
   {id:'jixiang', short:'浙江集享', start:'2019.04', time:'2019.04 – 2023.04', name:'浙江集享电子商务有限公司', role:'用户运营', title:'把 App 用户带到企微', intro:'搭建 App 到企业微信的引流流程，按触点分层发券，设计沉默用户召回与新客阶梯返券。', figures:[['5%–8%','企微添加率'],['10% → 20%','访问下单率']], points:['通过弹窗、首页资源位和订单完成页等触点分层发券。','设计 AI 外呼、短信与企微承接流程，通过 A/B 测试迭代短信话术，协同产品研发精简 H5 授权步骤。','设计企微新客首单券与下单后阶梯返券，推动首单及后续复购。']},
   {id:'kangpu', short:'康普（南京）', start:'2024.05', time:'2024.05 – 2025.05', name:'康普（南京）健康发展有限公司', role:'用户运营', title:'团长运营与大促', intro:'签约核心团长，推动社群迁入企微，用爆款引流、套餐组合提升客单价。', figures:[['123 万元','大促销售额'],['89 → 156 元','平均客单价']], points:['线下拜访签约 6 位核心团长，按团长类型提供运营支持，梳理用户标签与团长分级运营流程。','主导 618 与周年促销，策划老带新和工厂溯源参访，招募新团长、唤醒沉默用户并维护核心用户。']},
   {id:'guangwo', short:'江苏广沃', start:'2025.12', time:'2025.12 – 2026.04', name:'江苏广沃房地产营销策划有限公司', role:'用户运营', title:'私域项目冷启动', intro:'分析私域电商可行性，梳理存量业主的触达方式，设计从分散线索到企微的导流流程。', points:['评估企业微信及 SaaS 工具。','建立企微添加率、活动响应和首单转化等指标的监测口径。']},
-  {id:'xjd', short:'小金豆 App', start:'2026.10', time:'2026.10 至今', name:'宸语信科（江苏）数字科技有限公司', role:'App 运营', title:'小金豆 App 运营', intro:'配置优惠活动及 Banner 资源位，上线前核对推广链接与落地页，走查领取流程。', points:['撰写活动标题和素材文案，上线前核对推广链接及跳转落地页。','走查活动入口、领取流程及推广跳转，整理产品反馈，输出 App 体验报告及运营周报。','维护 App 游戏内容，参与社群运营方案讨论。']},
+  {id:'xjd', short:'消费权益 App', start:'2026.10', time:'2026.10 至今', name:'宸语信科（江苏）数字科技有限公司', role:'App 运营', title:'消费权益 App 内容与活动运营', intro:'负责消费权益类 App 的内容与活动运营，覆盖电商返利、低价优惠和任务激励。推进选品、活动配置、资源位承接及上线前验收。', figures:[['3 个','搜索页运营模块'],['6 项','iOS 内测问题记录']], points:['配置首页返利区的平台活动和低价商品，规划 Banner 与活动入口，负责活动文案、推广转链及落地页验收。','完成搜索页电商返利、手游和任务激励 3 个模块的配置，核对素材及跳转链路。','按用户路径走查活动入口、领取、分享与提现，整理 iOS 内测 6 项问题并形成缺陷记录，向产品团队反馈。','维护游戏联运内容，参与企微社群承接方案讨论，梳理 App 到企微的引导及入群流程。']},
 ];
 
 const cases = [
@@ -11,12 +11,11 @@ const cases = [
   ['jixiang','repeat-order','首单券与阶梯返券','为企微新客设计首单券，用户下单后再按阶段返券，承接后续复购。',['新客首单券','下单后返券','后续复购'],[['10% → 20%','访问下单率']]],
   ['kangpu','promotion','618 与周年促销','用爆款引流，借助套餐组合提升客单价。',[ ],[['123 万元','活动期销售额'],['89 → 156 元','平均客单价']]],
   ['guangwo','cold-start','存量业主到企微','梳理业主触点，设计企微导流，并用添加率、活动响应与首单转化观察冷启动表现。',['存量业主触达','企微导流','监测首单转化'],[]],
-  ['xjd','app-ops','小金豆活动配置与内测','配置优惠活动及 Banner，核验推广跳转与领取流程，记录内测问题并整理反馈。',['配置活动','核验跳转','整理体验反馈'],[]],
+  ['xjd','app-ops','消费权益 App 活动运营与上线验收','围绕电商返利和优惠活动，从选品、资源位配置及文案到推广跳转验收推进上线准备。完成搜索页 3 个运营模块配置，走查领取、分享、提现等流程，整理 6 项 iOS 内测问题供产品团队处理。',['活动及素材配置','推广链路验收','内测问题反馈'],[['3 个','搜索页运营模块'],['6 项','iOS 内测问题记录']]],
 ];
 
 
 const cities = [
-  {key:'lanzhou', name:'兰州', province:'甘肃', lng:103.8343, lat:36.0611, map:3, jobs:['education']},
   {key:'hangzhou', name:'杭州', province:'浙江', lng:120.1551, lat:30.2741, map:2, jobs:['jixiang']},
   {key:'nanjing', name:'南京', province:'江苏', lng:118.7969, lat:32.0603, map:1, jobs:['xjd','guangwo','kangpu']},
 ];
@@ -28,7 +27,7 @@ const card = document.querySelector('#city-card');
 const overview = document.querySelector('#overview');
 const reduced = matchMedia('(prefers-reduced-motion: reduce)');
 const compact = matchMedia('(max-width:760px)');
-let size, camera, animation, selected, openButton, cardSide;
+let size, camera, animation, selected, openButton;
 const make = (tag, cls, content) => {
   const element = document.createElement(tag);
   element.className = cls;
@@ -45,7 +44,7 @@ document.querySelector('#longform').innerHTML =
   }).join('')+'</section>'+
   '<section class="wrap record" id="experience"><h2>完整履历</h2>'+
   [...stops].reverse().map(job=>'<details id="record-'+job.id+'"><summary>'+job.name+'<span>'+job.role+' · '+job.time+'</span></summary><ul>'+job.points.map(point=>'<li>'+point+'</li>').join('')+'</ul></details>').join('')+
-  '<div class="tags" aria-label="核心技能"><span>企业微信私域搭建</span><span>用户分层与召回</span><span>团长运营</span><span>活动策划与配置</span><span>推广链路检查</span></div></section>';
+  '<div class="tags" aria-label="核心技能"><span>企业微信私域搭建</span><span>用户分层与召回</span><span>团长运营</span><span>活动策划与配置</span><span>推广链路检查</span><span>AI 调研与运营工作流</span></div></section>';
 
 for(const city of cities){
   city.pin=make('button','pin','');
@@ -126,8 +125,7 @@ function target(){
   const base=Math.min(w/(compact.matches?65:83),h/(compact.matches?51:56));
   if(!selected) return {lng:104,lat:mercator(37),scale:base,x:w*(compact.matches?.49:.54),y:h*.48};
   const i=cities.indexOf(selected);
-  cardSide=selected.key==='lanzhou'?'right':'left';
-  const focusX=compact.matches?w*.5:w*(cardSide==='right'?.40:.64);
+  const focusX=w*(compact.matches?.5:.64);
   return {lng:coords[i][0],lat:coords[i][1],scale:base*(compact.matches?3.9:5.1),x:focusX,y:h*(compact.matches?.27:.49)};
 }
 function at([lng,lat]){
@@ -184,10 +182,10 @@ function draw(){
       ctx.beginPath();ctx.arc(x,y,22,0,Math.PI*2);ctx.strokeStyle='#eab46d65';ctx.lineWidth=1;ctx.stroke();
       if(!compact.matches){
         const cw=card.offsetWidth;
-        const left=cardSide==='right'?Math.min(w-cw-20,x+47):Math.max(20,x-cw-53);
+        const left=Math.max(20,x-cw-53);
         const top=Math.min(h-card.offsetHeight-76,Math.max(75,y-card.offsetHeight*.48));
         card.style.left=left+'px';card.style.top=top+'px';
-        ctx.beginPath();ctx.moveTo(x+(cardSide==='right'?16:-16),y);ctx.lineTo(cardSide==='right'?left:left+cw,Math.min(top+card.offsetHeight-14,Math.max(top+14,y)));ctx.strokeStyle='#d7a16090';ctx.stroke();
+        ctx.beginPath();ctx.moveTo(x-16,y);ctx.lineTo(left+cw,Math.min(top+card.offsetHeight-14,Math.max(top+14,y)));ctx.strokeStyle='#d7a16090';ctx.stroke();
       } else {
         card.style.left='16px';card.style.top=Math.max(235,y+35)+'px';
       }

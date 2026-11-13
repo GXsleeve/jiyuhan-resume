@@ -12,3 +12,5 @@
 
 .entry-links{display:flex;flex-wrap:wrap;gap:.15rem .8rem}
 @media(max-width:760px){.city-card{max-height:410px}.map-stage.has-city{min-height:770px}.pin{min-height:30px}}
+
+.snapshot .history{grid-template-columns:repeat(2,1fr)}
