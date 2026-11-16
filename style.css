@@ -14,3 +14,10 @@
 @media(max-width:760px){.city-card{max-height:410px}.map-stage.has-city{min-height:770px}.pin{min-height:30px}}
 
 .snapshot .history{grid-template-columns:repeat(2,1fr)}
+
+.bio strong{color:var(--fg)}
+.resume-actions{display:flex;flex-wrap:wrap;align-items:center;gap:.65rem 1rem;margin:0 0 1.5rem;font-size:.85rem}
+.resume-actions a{display:inline-flex;align-items:center;min-height:44px}
+.resume-primary{background:var(--gold);color:var(--bg);border-radius:.3rem;padding:.4rem .9rem;font-weight:750}
+.resume-primary:hover{background:#ffc98d;color:var(--bg)}
+.resume-secondary{color:var(--muted)}
